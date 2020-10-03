@@ -11,3 +11,11 @@ A starting point for using **Fetch** in **Deno**
   - Postman: https://docs.spacexdata.com/
 
 - Allowing a specific URL: `deno run --allow-net=api.spacexdata.com mod.ts`
+- Standard Logging Library: https://deno.land/std@0.72.0/log
+  ```typescript
+  log.debug('Hello world');
+  log.info(123456);
+  log.warning(true);
+  log.error({ foo: 'bar', fizz: 'bazz' });
+  log.critical('500 Internal server error');
+  ```
