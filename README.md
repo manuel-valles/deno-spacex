@@ -19,3 +19,4 @@ A starting point for using **Fetch** in **Deno**
   log.error({ foo: 'bar', fizz: 'bazz' });
   log.critical('500 Internal server error');
   ```
+- **flatmap Method** creates a flattened array of values by running each element in collection thru iteratee and flattening the mapped results. The iteratee is invoked with three arguments: (value, index|key, collection). More info: https://lodash.com/docs/4.17.15#flatMap
