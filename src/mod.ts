@@ -14,7 +14,7 @@ interface Payload {
 
 const launches = new Map<number, Launch>()
 
-const downloadLaunchData = async (): Promise<void> => {
+export const downloadLaunchData = async (): Promise<void> => {
     log.info('Downloading launch data...')
     const response: Response = await fetch('https://api.spacexdata.com/v3/launches', {
         method: 'GET'
@@ -41,4 +41,9 @@ const downloadLaunchData = async (): Promise<void> => {
     }
 }
 
-await downloadLaunchData()
+if (import.meta.main) {
+    await downloadLaunchData()
+    log.info(JSON.stringify(import.meta))
+    log.info(`Downloaded data for ${launches.size} SpaceX launches.`)
+}
+
